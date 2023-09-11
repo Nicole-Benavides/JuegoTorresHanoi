@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,21 @@
 <body>
     <section>
         <div class="torres">
-            <input type="number" id="ficha3" value="3" readonly draggable="true" class="fichas" disabled>
-            <input type="number" id="ficha2" value="2" readonly draggable="true" class="fichas" disabled>
-            <input type="number" id="ficha1" value="1" readonly draggable="true" class="fichas" disabled>
+            <!-- readonly: Para que no puedan escribir (Es decir solo lectura)  -->
+            <!-- disabld:  El campo se desactiva. (No pueden recibir ni enviar datos) -->
+            <!-- draggable: Permite que el elemento sea arrastrable -->            
+            <input type="number" class="fichas" id="ficha1" value="1" draggable="true" readonly disabled>
+            <input type="number" class="fichas" id="ficha2" value="2" draggable="true" readonly disabled>
+            <input type="number" class="fichas" id="ficha3" value="3" draggable="true" readonly disabled>
         </div>
         <div class="torres"></div>
         <div class="torres"></div>
+
+        <div class="ganador" id="ganador">
+            <h2>Felicitaciones Ganaste</h2>
+        </div>
     </section>
+
     <script src="js/Main.js"></script>
 </body>
 </html>
