@@ -89,20 +89,27 @@ input#ficha3{
     display: block;
 }
 
-
-
-.ganador h2{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.ganador .textos{
+    font-family: 'Courier New', Courier, monospace;
     font-size: 40px;
     text-align: center;
-    background-color: #ffffff69;
+    background-color: #ffffffa3;
     padding: 40px;
     border-radius: 10px;
-    animation: popUp 3s infinite;
+    /* animation: popUp 3s infinite; */
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 30%;
     z-index: 9;
+}
+
+
+.ganador .textos h2, h6{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.ganador .textos p{
+    font-family: 'Courier New', Courier, monospace;
 }
 
 @keyframes popUp{

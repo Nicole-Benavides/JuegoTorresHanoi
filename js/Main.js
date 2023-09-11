@@ -15,6 +15,13 @@ let fichaArrastrable = null;
 // Ciclo en si
 // dragstart: Este evento se dispara cuando comienza el arrastre de un elemento. Aquí, puedes definir qué datos asociados al elemento se deben transferir durante el arrastre.
 
+
+let nombreJugador = null;
+nombreJugador = prompt('Por favor ingrese su nombre jugador:');
+
+
+let contadorMovimientos = 0;
+
 fichas.forEach((ficha) => {
     // Funcion para añadir dragstart a los elementos arrastrables y capturar sus datos
     ficha.addEventListener('dragstart', (e) => {
@@ -29,6 +36,8 @@ fichas.forEach((ficha) => {
             e.preventDefault();
             alert("No puedes mover esta ficha, porque no es la primera");
         }
+
+        contadorMovimientos++;
     });
 });
 
@@ -95,6 +104,14 @@ torres.forEach((torre) => {
             }
         });
 
+        // Traer la etiqueta HTML, donde se va a imprimir
+        let contNombre = document.getElementById('nombre');
+        // Llamar la etiqueta y agregar propiedad 
+        // innerText es una propiedad en JavaScript que se utiliza para obtener o establecer el texto contenido dentro de un elemento HTML. Por ende se le pasan las variables 
+        contNombre.innerText = nombreJugador;
+
+        let contMovimientos = document.getElementById('movimientos');
+        contMovimientos.innerText = contadorMovimientos;
     }
 
 
