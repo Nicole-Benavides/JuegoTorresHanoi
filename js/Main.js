@@ -3,7 +3,6 @@ let torres = document.querySelectorAll('.torres');
 
 // llamar elemento - fichas
 let fichas = document.querySelectorAll('.fichas');
-let primeraFicha = document.querySelector('.fichas');
 
 // 1. Proceso para poder Arrastrar
 // 1.1 = Colocar el evento dragstart a los elemntos arrastrables
@@ -19,10 +18,20 @@ let fichaArrastrable = null;
 fichas.forEach((ficha) => {
     // Funcion para añadir dragstart a los elementos arrastrables y capturar sus datos
     ficha.addEventListener('dragstart', (e) => {
-        // guardar datos de la ficha en la variable fichaArrastrable
-        fichaArrastrable = e.target;
+        // Obtener la primera ficha, atraves de (parentElement)
+        primeraFicha = ficha.parentElement.querySelector('.fichas');
+
+        // Verificar que la ficha seleccionada sea la primera
+        if (ficha === primeraFicha) {
+            fichaArrastrable = e.target;
+        } else {
+            // Si no es el primero, no permitas que se arrastre
+            e.preventDefault();
+            alert("No puedes mover esta ficha, porque no es la primera");
+        }
     });
 });
+
 
 //     // e es el objeto de evento que contiene información sobre el evento dragstart.
 //     // e.target es el elemento arrastrable en el que se hizo clic, y se guarda en la variable fichaArrastrable para su posterior manipulación.
