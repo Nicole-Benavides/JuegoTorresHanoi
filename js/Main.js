@@ -92,17 +92,21 @@ torres.forEach((torre) => {
 
 
     function ganar() {
-        torres.forEach((torre) => {
+        terceraTorre = torres[2];
+
+        if (terceraTorre) {
+
             // Obtener cuantos elementos tiene una torre (childElementCount)
             let elementosTorre = null;
-            elementosTorre = torre.childElementCount;
+            elementosTorre = terceraTorre.childElementCount;
             console.log(elementosTorre);
 
             if (elementosTorre === 3) {
                 let contGanador = document.getElementById('ganador');
                 contGanador.classList.add('active');
             }
-        });
+        }
+
 
         // Traer la etiqueta HTML, donde se va a imprimir
         let contNombre = document.getElementById('nombre');
